@@ -1,0 +1,444 @@
+/* Estilo general del header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Estilo del navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+ 
+/* Estilo del título */
+h1 {
+    margin: 0;
+}
+
+/* Estilo de los botones del navbar */
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-buttons a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-buttons a:hover {
+    background-color: #2501a5;
+}
+
+/* Estilo para la lista desplegable (pantallas pequeñas) */
+.menu {
+    position: relative;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle:hover {
+    color: #007bff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #007bff;
+}
+
+/* Mostrar el menú al hacer clic */
+.menu.active .dropdown-menu {
+    display: block;
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 768px) {
+    .menu {
+        display: none; /* Oculta el menú desplegable en pantallas grandes */
+    }
+    .navbar .nav-buttons {
+        display: flex; /* Muestra los botones de navegación en pantallas grandes */
+    }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 767px) {
+    .menu {
+        display: block; /* Muestra el menú desplegable en pantallas pequeñas */
+    }
+
+    .nav-buttons {
+        display: none; /* Oculta los botones de navegación en pantallas pequeñas */
+    }
+}
+
+
+
+/* Estilo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Fondo gris suave */
+}
+
+/* Estilo del contenedor de las tarjetas */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    overflow: hidden; /* Asegura que la imagen no sobresalga */
+    width: 100%; /* Se ajusta al ancho del contenedor */
+    max-width: 300px; /* Ancho máximo de las tarjetas */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo del contenedor de la imagen */
+.card-image {
+    background-color: #eeeeee; /* Color de fondo neutro para la imagen */
+    padding: 15px; /* Espacio interno */
+    text-align: center; /* Centrar la imagen */
+}
+
+.card-image img {
+    max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    max-height: 100px; /* Altura máxima para mantener uniformidad */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+}
+
+/* Estilo del contenedor de contenido */
+.card-content {
+    padding: 15px; /* Espacio interno */
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+/* Estilo del título */
+.card-tittle h2 {
+    margin-top: 30;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo del párrafo */
+.card-content p {
+    margin: 0 0 15px;
+    color: #333; /* Color del texto */
+}
+
+/* Estilo del enlace */
+.card-content a {
+    text-decoration: none;
+    color: #2501a5; /* Color del enlace */
+}
+
+/* Estilo del enlace en hover */
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para responsividad */
+
+/* Móviles (<= 480px) */
+@media (max-width: 480px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Cada tarjeta ocupa todo el ancho del contenedor */
+        max-width: none; /* Ancho máximo desactivado en móviles */
+    }
+}
+
+/* Tablets (481px - 767px) */
+@media (min-width: 481px) and (max-width: 650px) {
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px; /* Menor espacio entre tarjetas */
+    }
+
+    .card {
+        width: calc(50% - 10px); /* Cuatro tarjetas por fila */
+    }
+}
+
+/* Tablets (481px - 767px) */
+@media (min-width: 650px) and (max-width: 1000px) {
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px; /* Menor espacio entre tarjetas */
+    }
+
+    .card {
+        width: calc(25% - 10px); /* Cuatro tarjetas por fila */
+    }
+}
+
+/* Pantallas grandes (>= 768px) */
+@media (min-width: 1000px) {
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px; /* Espacio entre tarjetas */
+    }
+
+    .card {
+        width: calc(16.666% - 20px); /* Seis tarjetas por fila */
+    }
+}
+
+html {
+    scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+}
+
+/* Estilo de la caja de introducción */
+.intro-box {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espacio interno */
+    margin: 20px auto; /* Margen alrededor y centrado */
+    max-width: 800px; /* Ancho máximo */
+}
+
+.intro-box h2 {
+    margin-top: 0; /* Quitar margen superior */
+}
+
+.intro-box p {
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    line-height: 1.6; /* Interlineado para mejorar la legibilidad */
+}
+
+/* Tabla de metricas */
+.metrics-table {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .metrics-table h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #0c099f;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #eaeaea;
+  }
+
+/* Estilos de tarjetas al cursor */
+
+  /* Agrega Sombra */
+  .card {
+    transition: box-shadow 0.3s ease; 
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
+  /* OSscurece el fondo */
+  .card {
+    transition: background-color 0.3s ease;
+  }
+  
+  .card:hover {
+    background-color: #afa5a5;
+  }
+  
+  /* Escalado de imagen */
+  .card img {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover img {
+    transform: scale(1.2);
+  }
+  
+  /*Escalado de Contenido */
+  .card-content {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-content {
+    transform: scale(1.05);
+  }
+  
+  /*Escalado de Titulo */
+  .card-tittle {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-tittle {
+    transform: scale(1.15);
+  }
+  
+  .nav-buttons{
+    text-align: center;
+  }
+  
+  /* Estilos específicos para la sección de repositorio */
+.repositorio {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .repositorio-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .repositorio-box h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .repositorio-box p {
+    color: #666;
+  }
+  
+  .repositorio-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: #2501a5;
+    text-decoration: none;
+    border: 1px solid #2501a5;
+    border-radius: 5px;
+  }
+  
+  .repositorio-link:hover {
+    background-color: #2501a5;
+    color: #fff;
+    transition: transform 0.3s ease;
+    transform: scale(1.3);
+  }
+  
+  /* Estilos generales del footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .footer-content h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+  
+  .footer-content p {
+    color: #ddd;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-list li {
+    margin: 0.5rem 0;
+  }
+  
+  .contact-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+  
+
